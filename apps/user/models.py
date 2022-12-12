@@ -9,3 +9,4 @@ class User(db.Model):
     password = db.Column(db.String(20), nullable=True)
     phone = db.Column(db.String(11), nullable=True)
     create_time = db.Column(db.DateTime, default=datetime.now())
+    is_del = db.Column(db.BOOLEAN, default=False)

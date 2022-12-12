@@ -27,7 +27,7 @@
                     <th>{{ user.phone }}</th>
                     <th>{{ user.create_time }}</th>
                     <th><a href="{{ url_for('user.update') }}?id={{ user.id }}">更新</a>
-                        <a href="{{ url_for('user.delete') }}?id={{ user.id }}">删除</a></th>
+                        <a href="{{ url_for('user.del') }}?id={{ user.id }}">删除</a></th>
                 </tr>
             {% endfor %}
 
@@ -39,6 +39,7 @@
 <script>
     $('#search').click(function () {
         let content = $("input[name='search']").val();
+
         location.href = '{{ url_for('user.search') }}?search=' + content
         // http://127.0.0.1:5000/search?search=zhangsan
     })
